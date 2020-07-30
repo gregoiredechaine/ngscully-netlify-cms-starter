@@ -31,7 +31,7 @@ collections: # A list of collections the CMS should be able to edit
     files:
       - label: 'About Page'
         name: 'about'
-        file: 'content/about.md"
+        file: 'content/about.md'
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Description, name: description, widget: string}
