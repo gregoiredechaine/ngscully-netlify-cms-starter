@@ -1,8 +1,6 @@
 ---
 title: 2020-06-27-blog
-description: 'blog description'
+description: blog description
+intro: Testd dscdv
 ---
 
-# 2020-06-27-blog
-
-This is a test.
