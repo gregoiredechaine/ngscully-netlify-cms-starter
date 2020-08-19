@@ -9,6 +9,11 @@ export const config: ScullyConfig = {
       slug: {
         folder: './content/blog',
       },
+      '/directory/:slug': {
+        type: 'contentFolder',
+        slug: {
+          folder: './content/directory',
+        },
     },
   },
 };
