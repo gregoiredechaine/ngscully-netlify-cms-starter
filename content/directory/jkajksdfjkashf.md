@@ -1,7 +1,8 @@
 ---
-title: 2020-06-27-blog
-description: 'blog description'
-published: true
+title: Tire Alignment
+description: Tire Alignment Company
+publish: true
 ---
+# Tire Alignment Company
 
-# 2020-06-27-blog
+This is the tire alignment company.
