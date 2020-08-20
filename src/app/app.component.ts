@@ -1,4 +1,4 @@
-import {IdleMonitorService} from '@scullyio/ng-lib';
+import { IdleMonitorService } from '@scullyio/ng-lib';
 import { Component } from '@angular/core';
 
 @Component({
