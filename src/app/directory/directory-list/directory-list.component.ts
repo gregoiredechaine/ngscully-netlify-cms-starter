@@ -8,7 +8,7 @@ import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
   styleUrls: ['./directory-list.component.scss'],
 })
 export class DirectoryListComponent implements OnInit {
-  blogs$ = this.srs.available$.pipe(
+  directoryList$ = this.srs.available$.pipe(
     map((routeList) =>
       routeList.filter((route: ScullyRoute) => route.route.startsWith(`/directory/`))
     ),

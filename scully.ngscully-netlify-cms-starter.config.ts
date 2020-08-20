@@ -10,5 +10,11 @@ export const config: ScullyConfig = {
         folder: './content/blog',
       },
     },
+    '/directory/:slug': {
+      type: 'contentFolder',
+      slug: {
+        folder: './content/directory',
+      },
+    },
   },
 };
