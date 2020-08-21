@@ -77,9 +77,11 @@ collections: # A list of collections the CMS should be able to edit
           name: "directoryImage",
           widget: "image",
           default: "/uploads/default_directory.jpeg",
-          media_library:
-            config:
+          media_library: {
+            config: {
               multiple: false,
+              }
+            }
         }
   - name: 'contact'
     label: 'Contact'
