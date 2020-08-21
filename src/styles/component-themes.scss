@@ -1,5 +1,7 @@
 @import '../app/directory/directory-list/directory-list.component';
+@import '../app/home/home.component';
 
 @mixin component-themes($theme) {
   @include directory-list-theme($theme);
+  @include home-theme($theme);
 }

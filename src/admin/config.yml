@@ -72,6 +72,15 @@ collections: # A list of collections the CMS should be able to edit
           min: 1,
           max: 999,
         }
+      - {
+          label: "Directory Image"
+          name: "directoryImage"
+          widget: "image"
+          default: "/uploads/default_directory.jpeg"
+          media_library:
+            config:
+              multiple: false
+        }
   - name: 'contact'
     label: 'Contact'
     files:

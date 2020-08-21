@@ -1,23 +1,44 @@
-.cover-image {
-  width: 100%;
-  height: 85vh;
-  object-fit: cover;
-  object-position: 50% 50%;
-}
+// Styling for Home
+@import '~@angular/material/theming';
 
-.image-tile {
-  width: 100%;
-  height: 50vh;
-  object-fit: cover;
-  object-position: 50% 50%;
-}
+@mixin home-theme($theme) {
+  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+  $bg: map-get(map-get($theme, background), background);
+  $bg2: map-get(map-get($theme, background), app-bar);
+  $break-small: 599px;
+  $break-tablet: 959px;
 
-.big-tile {
-  padding: 60px;
-}
+  .cover-image {
+    width: 100%;
+    height: 85vh;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
 
-.under-construction {
-  background-color: #eeeeee;
-  padding: 60px;
-  margin: 0;
+  .image-tile {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
+  .big-tile {
+    padding: 60px;
+  }
+
+  .under-construction {
+    background-color: $bg2;
+    padding: 60px;
+    margin: 60px 0 0 0;
+  }
+
+  @media screen and (max-width: $break-tablet) {
+    .big-tile {
+      padding: 60px 30px;
+    }
+    .under-construction {
+      padding: 60px 30px;
+    }
+  }
 }
