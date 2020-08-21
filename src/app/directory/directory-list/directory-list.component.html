@@ -1,23 +1,46 @@
-<h1 class="mat-display-2">Directory</h1>
-<h1 class="mat-display-1">Browse the directory to find more information about our tenants.</h1>
+<mat-progress-bar *ngIf="!directoryList$" mode="buffer"></mat-progress-bar>
 
-<div class="directory">
-  <ngx-masonry [options]="{ gutter: 30, itemSelector: '.masonry-item', columnWidth: '.masonry-item', horizontalOrder: true }">
-    <div ngxMasonryItem class="masonry-item" *ngFor="let directory of directoryList$ | async">
-      <mat-card class="article" [routerLink]="[directory.route]">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{ directory.title || directory.route }}</mat-card-title>
-          <!-- <mat-card-subtitle>{{ directory.published | date: 'shortDate' }}</mat-card-subtitle> -->
-        </mat-card-header>
-        <mat-card-content>
-          <p>{{ directory.description }}</p>
-          <p>Unit {{ directory.unitNumber }}</p>
-        </mat-card-content>
-        <mat-card-actions align="end">
-          <button mat-button color="primary">Read More</button>
-        </mat-card-actions>
-      </mat-card>
+<ng-container *ngIf="directoryList$">
+  <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign="center center">
+    <div class="big-tile" fxFlex="0 1 50%" fxFlex.lt-sm="100%">
+      <h1 class="mat-display-2">Directory</h1>
+      <h1 class="mat-headline">
+        Browse the directory to find more information about our tenants, contact information included.
+      </h1>
     </div>
-  </ngx-masonry>
+    <div class="big-tile" fxFlex="0 1 50%" fxFlex.lt-md="100%">
+      <img class="image-tile" src="./assets/images/render_005.jpeg">
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="directory-board">
+    <h1 class="mat-display-2 directory-board-title">Directory Board:</h1>
+    <div class="button-row">
+      <button mat-flat-button class="sidenav-jumbo-button" *ngFor="let directory of directoryList$ | async" routerLink="{{directory.route}}">{{ directory.title }}</button>
+    </div>
+  </div>
+</ng-container>
+
+<div fxLayout="column" class="directory">
+  <div fxFlex="100%">
+    <h1 class="mat-display-2">Detailed Directory:</h1>
+    <ngx-masonry [options]="{ gutter: 30, itemSelector: '.masonry-item', columnWidth: '.masonry-item', horizontalOrder: true }">
+      <div ngxMasonryItem class="masonry-item" *ngFor="let directory of directoryList$ | async">
+        <mat-divider></mat-divider>
+        <mat-card [routerLink]="[directory.route]" id="{{ directory.title.replace(' ', '_') }}">
+          <mat-card-header>
+            <mat-card-title>{{ directory.title }}</mat-card-title>
+            <mat-card-subtitle>Unit {{ directory.unitNumber }}</mat-card-subtitle>
+            <!-- <mat-card-subtitle>{{ directory.published | date: 'shortDate' }}</mat-card-subtitle> -->
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ directory.description }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary">Read More</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </ngx-masonry>
+  </div>
 </div>

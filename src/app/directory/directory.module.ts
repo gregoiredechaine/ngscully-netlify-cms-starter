@@ -4,16 +4,21 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
 import { DirectoryRoutingModule } from './directory-routing.module';
 import { DirectoryComponent } from './directory.component';
 import { DirectoryListComponent } from './directory-list/directory-list.component';
-import { MaterialModule } from '../shared/material.module';
+import { AngularMaterialModule } from '../angular-material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxMasonryModule } from 'ngx-masonry';
 
 @NgModule({
-  declarations: [DirectoryComponent, DirectoryListComponent],
+  declarations: [
+    DirectoryComponent,
+    DirectoryListComponent,
+  ],
   imports: [
     CommonModule,
     DirectoryRoutingModule,
     ScullyLibModule,
-    MaterialModule,
+    AngularMaterialModule,
+    FlexLayoutModule,
     NgxMasonryModule
   ],
 })

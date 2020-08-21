@@ -1,15 +1,75 @@
-.blog {
-  margin-top: 2rem;
-  display: grid;
-  /* make grid responsive */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-column-gap: 3rem;
-  grid-row-gap: 20px;
-}
-.blog .article {
-  width: 100%;
-}
-.masonry-item {
-  width: calc(33.333vw - 1.333 * 30px);
-  margin-bottom: 30px;
+// Styling for Directory List
+@import '~@angular/material/theming';
+
+@mixin directory-list-theme($theme) {
+  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+  $bg: map-get(map-get($theme, background), background);
+  $break-small: 599px;
+  $break-tablet: 959px;
+
+  .directory {
+    padding: 60px;
+  }
+
+  .directory-board {
+    background-color: mat-color($accent);
+    padding: 60px;
+
+    .directory-board-title {
+      color: $bg;
+    }
+  }
+
+  .masonry-item {
+    width: calc(33.333% - 0.666 * 30px);
+    margin-bottom: 30px;
+  }
+
+  .image-tile {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
+  .big-tile {
+    padding: 60px;
+  }
+
+  .button-row {
+    display: table-cell;
+    margin-bottom: 60px;
+
+    .mat-button-base {
+      margin: 0 30px 30px 0;
+    }
+  }
+
+  .sidenav-jumbo-button {
+    height: 60px;
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+
+  @media screen and (max-width: $break-tablet) {
+    .directory {
+      padding: 60px 30px;
+    }
+    .directory-board {
+      padding: 60px 30px;
+    }
+    .big-tile {
+      padding: 60px 30px;
+    }
+    .masonry-item {
+      width: calc(50% - 0.5 * 30px);
+    }
+  }
+
+  @media screen and (max-width: $break-small) {
+    .masonry-item {
+      width: 100%;
+    }
+  }
 }

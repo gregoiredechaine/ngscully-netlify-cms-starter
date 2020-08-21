@@ -3,7 +3,9 @@
 * https://materialtheme.arcsine.dev
 */
 
+@import '~normalize.css';
 @import '~@angular/material/theming';
+@import './component-themes';
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 
@@ -85,7 +87,7 @@ $mat-dark-theme-foreground: (
 
 // Background config
 // Light bg
-$light-background:    #fafafa;
+$light-background:    #ffffff;
 $light-bg-darker-5:   darken($light-background, 5%);
 $light-bg-darker-10:  darken($light-background, 10%);
 $light-bg-darker-20:  darken($light-background, 20%);
@@ -210,16 +212,19 @@ $mat-warn: (
     darker: $light-primary-text,
   )
 );
-$theme-warn: mat-palette($mat-warn, main, lighter, darker);;
+$theme-warn: mat-palette($mat-warn, main, lighter, darker);
 
 $theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
-$altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
+$dark-theme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
 
 // Theme Init
 @include angular-material-theme($theme);
+@include component-themes($theme);
 
-.theme-alternate {
-  @include angular-material-theme($altTheme);
+// Our dark theme
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+  @include component-themes($dark-theme);
 }
 
 // Specific component overrides, pieces that are not in line with the general theming
@@ -241,6 +246,6 @@ $altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
   font-size: 30px;
   font-family: 'Material Icons', 'Material Icons';
   .mat-badge-content {
-    font-family: 'Montserrat';
+    font-family: 'Arial';
   }
 }
