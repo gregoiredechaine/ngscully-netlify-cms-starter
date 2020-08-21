@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "scully": "scully",
+    "scully-build": "ng build --prod && npm run scully",
     "scully:serve": "scully serve"
   },
   "private": true,
@@ -27,6 +28,8 @@
     "@scullyio/init": "latest",
     "@scullyio/ng-lib": "latest",
     "@scullyio/scully": "latest",
+    "masonry-layout": "^4.2.2",
+    "ngx-masonry": "^10.0.5",
     "rxjs": "~6.5.3",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.3"

@@ -1,23 +1,23 @@
-<!-- <h1>Overview of directory posts</h1> -->
+<h1 class="mat-display-2">Directory</h1>
+<h1 class="mat-display-1">Browse the directory to find more information about our tenants.</h1>
 
 <div class="directory">
-  <mat-card
-    class="article"
-    *ngFor="let directory of directoryList$ | async"
-    [routerLink]="[directory.route]"
-  >
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{ directory.title || directory.route }}</mat-card-title>
-      <!-- <mat-card-subtitle>{{ directory.published | date: 'shortDate' }}</mat-card-subtitle> -->
-    </mat-card-header>
-    <mat-card-content>
-      <p>
-        {{ directory.description }}
-      </p>
-    </mat-card-content>
-    <mat-card-actions align="end">
-      <button mat-button color="primary">Read More</button>
-    </mat-card-actions>
-  </mat-card>
+  <ngx-masonry [options]="{ gutter: 30, itemSelector: '.masonry-item', columnWidth: '.masonry-item', horizontalOrder: true }">
+    <div ngxMasonryItem class="masonry-item" *ngFor="let directory of directoryList$ | async">
+      <mat-card class="article" [routerLink]="[directory.route]">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ directory.title || directory.route }}</mat-card-title>
+          <!-- <mat-card-subtitle>{{ directory.published | date: 'shortDate' }}</mat-card-subtitle> -->
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ directory.description }}</p>
+          <p>Unit {{ directory.unitNumber }}</p>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-button color="primary">Read More</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </ngx-masonry>
 </div>
