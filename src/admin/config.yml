@@ -73,10 +73,10 @@ collections: # A list of collections the CMS should be able to edit
           max: 999,
         }
       - {
-          label: "Directory Image"
-          name: "directoryImage"
-          widget: "image"
-          default: "/uploads/default_directory.jpeg"
+          label: "Directory Image",
+          name: "directoryImage",
+          widget: "image",
+          default: "/uploads/default_directory.jpeg",
           media_library:
             config:
               multiple: false
