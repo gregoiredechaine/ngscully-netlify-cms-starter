@@ -64,13 +64,13 @@ collections: # A list of collections the CMS should be able to edit
           widget: 'markdown',
         }
       - {
-          label: "Unit Number"
-          name: "unitNumber"
-          widget: "number"
-          default: 1
-          valueType: "int"
-          min: 1
-          max: 999
+          label: "Unit Number",
+          name: "unitNumber",
+          widget: "number",
+          default: 1,
+          valueType: "int",
+          min: 1,
+          max: 999,
         }
   - name: 'contact'
     label: 'Contact'
