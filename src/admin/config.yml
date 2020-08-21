@@ -79,7 +79,7 @@ collections: # A list of collections the CMS should be able to edit
           default: "/uploads/default_directory.jpeg",
           media_library:
             config:
-              multiple: false
+              multiple: false,
         }
   - name: 'contact'
     label: 'Contact'
