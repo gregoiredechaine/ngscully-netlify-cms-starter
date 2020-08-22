@@ -42,14 +42,18 @@
     margin-bottom: 60px;
 
     .mat-button-base {
-      margin: 0 30px 30px 0;
+      margin: 0 15px 15px 0;
     }
   }
 
   .sidenav-jumbo-button {
-    height: 60px;
-    font-size: 1.5em;
+    height: 50px;
+    font-size: 1.25em;
     font-weight: 700;
+  }
+
+  .unit-number {
+    color: mat-color($primary);
   }
 
   @media screen and (max-width: $break-tablet) {

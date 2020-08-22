@@ -1,7 +1,9 @@
 @import '../app/directory/directory-list/directory-list.component';
 @import '../app/home/home.component';
+@import '../app/footer/footer.component';
 
 @mixin component-themes($theme) {
   @include directory-list-theme($theme);
   @include home-theme($theme);
+  @include footer-theme($theme);
 }

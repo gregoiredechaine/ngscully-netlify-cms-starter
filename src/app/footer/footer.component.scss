@@ -1,0 +1,49 @@
+// Styling for Directory List
+@import '~@angular/material/theming';
+
+@mixin footer-theme($theme) {
+  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+  $bg: map-get(map-get($theme, background), background);
+  $break-small: 599px;
+  $break-tablet: 959px;
+
+  .footer-container {
+    padding: 60px;
+    background-color: mat-color($accent);
+    color: $bg !important;
+  }
+
+  .example-button-row {
+    display: table-cell;
+    width: 100%;
+  }
+
+  .example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+
+  .example-flex-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 60px;
+  }
+
+  .cls-1{fill: $bg}
+
+  @media screen and (max-width: $break-tablet) {
+    .footer-container {
+      padding: 60px 30px;
+    }
+  }
+
+  @media screen and (max-width: $break-small) {
+
+  }
+}

@@ -26,18 +26,19 @@
     <h1 class="mat-display-2">Detailed Directory:</h1>
     <ngx-masonry [options]="{ gutter: 30, itemSelector: '.masonry-item', columnWidth: '.masonry-item', horizontalOrder: true }">
       <div ngxMasonryItem class="masonry-item" *ngFor="let directory of directoryList$ | async">
-        <mat-divider></mat-divider>
         <mat-card [routerLink]="[directory.route]" id="{{ directory.title.replace(' ', '_') }}">
           <mat-card-header>
             <mat-card-title>{{ directory.title }}</mat-card-title>
-            <mat-card-subtitle>Unit {{ directory.unitNumber }}</mat-card-subtitle>
-            <!-- <mat-card-subtitle>{{ directory.published | date: 'shortDate' }}</mat-card-subtitle> -->
+            <mat-card-title class="unit-number">Unit {{ directory.unitNumber }}</mat-card-title>
           </mat-card-header>
+          <img mat-card-image [src]="directory.directoryImage" alt="Photo of a Shiba Inu">
           <mat-card-content>
             <p>{{ directory.description }}</p>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-button color="primary">Read More</button>
+            <button mat-fab color="accent" matTooltip="Launch /{{directory.title}}" [matTooltipPosition]="'after'" [routerLink]="directory.router" aria-label="Open Project">
+              <mat-icon>touch_app</mat-icon>
+            </button>
           </mat-card-actions>
         </mat-card>
       </div>
