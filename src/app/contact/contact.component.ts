@@ -11,11 +11,8 @@ declare var ng: any;
   encapsulation: ViewEncapsulation.Emulated
 })
 export class ContactComponent implements OnInit {
-  zoom: 18;
-  center: {
-    lat: 43.808883,
-    lng: -79.252736
-  };
+  zoom = 18;
+  center: google.maps.LatLngLiteral;
   options: google.maps.MapOptions = {
     mapTypeId: 'hybrid',
     zoomControl: true,
@@ -36,6 +33,10 @@ export class ContactComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.center = {
+        lat: 43.808883,
+        lng: -79.252736,
+      }
   }
 
 }
