@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { GoogleMapsModule } from '@angular/google-maps'
 
 import { CustomIconService } from './services/custom-icon.service';
 
@@ -24,6 +25,7 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    GoogleMapsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
