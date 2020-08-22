@@ -31,5 +31,15 @@
       </div>
     </div>
   </div>
-  <google-map></google-map>
+  <div class="big-tile" fxFlex="100%">
+    <h1 class="mat-display-2">We're On The Map [Kind Of...]</h1>
+    <h1 class="mat-headline">
+      Our address exists, but the building is brand spanking new, so it hasn't made it to Google Earth yet. Use the map below to explore the area.
+    </h1>
+    <div style="height: 85vh;">
+      <google-map height="100%" width="100%" [zoom]="map.zoom" [center]="map.center" [options]="map.options">
+        <map-marker [position]="marker.position" [label]="marker.label" [title]="marker.title" [options]="marker.options"></map-marker>
+      </google-map>
+    </div>
+  </div>
 </div>
