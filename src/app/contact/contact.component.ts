@@ -12,7 +12,7 @@ declare var ng: any;
 })
 export class ContactComponent implements OnInit {
   map = {
-    zoom: 17,
+    zoom: 18,
     center: {lat: 43.808883, lng: -79.252736},
     options: google.maps.MapOptions = {
       mapTypeId: 'hybrid',
@@ -28,12 +28,9 @@ export class ContactComponent implements OnInit {
     lat: 43.808883,
     lng: -79.252736,
     },
-    label: {
-      color: 'black',
-      text: 'A',
-    },
     title: 'Scottfield Auto Centre',
   };
+
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
