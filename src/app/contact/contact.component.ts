@@ -11,22 +11,23 @@ declare var ng: any;
   encapsulation: ViewEncapsulation.Emulated
 })
 export class ContactComponent implements OnInit {
-  map = {
-    zoom: 18,
-    center: {lat: 43.808883, lng: -79.252736},
-    options: google.maps.MapOptions = {
-      mapTypeId: 'hybrid',
-      zoomControl: true,
-      scrollwheel: false,
-      disableDoubleClickZoom: true,
-      maxZoom: 20,
-      minZoom: 12,
-    },
+  zoom: 18;
+  center: {
+    lat: 43.808883,
+    lng: -79.252736
+  };
+  options: google.maps.MapOptions = {
+    mapTypeId: 'hybrid',
+    zoomControl: true,
+    scrollwheel: false,
+    disableDoubleClickZoom: true,
+    maxZoom: 20,
+    minZoom: 12,
   };
   marker = {
     position: {
-    lat: 43.808883,
-    lng: -79.252736,
+      lat: 43.808883,
+      lng: -79.252736,
     },
     title: 'Scottfield Auto Centre',
   };
@@ -35,7 +36,6 @@ export class ContactComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    console.log(this.map);
   }
 
 }
