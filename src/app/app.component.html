@@ -1,22 +1,9 @@
-<header>
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <span [routerLink]="['/']">Scottfield Auto Centre</span>
-      <span class="spacer"></span>
-      <button mat-button [routerLink]="['/blog']">Blog</button>
-      <button mat-button [routerLink]="['/directory']">Directory</button>
-      <button mat-button [routerLink]="['/contact']">Contact</button>
-      <button mat-button [routerLink]="['/about']">About</button>
-    </mat-toolbar-row>
-  </mat-toolbar>
-  <!-- <ul>
-  <li *ngFor="let route of scully.available$ | async">
-    <a [routerLink]="route.route">{{ route.title || route.route }}</a>
-  </li>
-</ul> -->
-</header>
-
-<div class="content mat-typography">
-  <router-outlet></router-outlet>
+<div [ngClass]="{'dark-theme': isDarkTheme | async}">
+  <div class="mat-app-background">
+    <app-nav></app-nav>
+    <div class="content mat-typography">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </div>
 </div>
-<app-footer></app-footer>

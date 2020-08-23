@@ -9,7 +9,7 @@
     <a mat-flat-button color="accent" href="mailto:info@scottfieldautocentre.com?subject=Scottfield Auto Centre General Inquiry">info@scottfieldautocentre.com</a>
     <a mat-flat-button color="accent" href="tel:###-###-####">(###) ###-####‬</a>
   </div>
-  <div class="big-tile" fxFlex="100%">
+  <div id="social" class="big-tile" fxFlex="100%">
     <h1 class="mat-display-2">Follow us on Social</h1>
     <h1 class="mat-headline">
       We are upping our social game, look for us on your favourite social platform. We are @scottfieldautocentre and our favourite hashtag is #scottauto. We look forward to your posts:
@@ -31,11 +31,14 @@
       </div>
     </div>
   </div>
-  <div class="big-tile" fxFlex="100%">
-    <h1 class="mat-display-2">We're On The Map [Kind Of...]</h1>
-    <h1 class="mat-headline">
-      Our address exists, but the building is brand spanking new, so it hasn't made it to Google Earth yet. Use the map below to explore the area.
-    </h1>
+
+  <div class="map-tile" fxFlex="100%">
+    <div class="map-tile-title">
+      <h1 class="mat-display-2">We're On The Map</h1>
+      <h1 class="mat-headline">
+        Our address exists, but the building is brand spanking new, so it hasn't made it to Google Earth yet. Use the map below to explore the area.
+      </h1>
+    </div>
     <div style="height: 85vh;">
       <!-- Dont forget to add Domain reference and API key to Google Cloud for Maps Javascript API-->
       <google-map height="100%" width="100%" [zoom]="zoom" [center]="center" [options]="options">

@@ -14,22 +14,22 @@
     color: $bg !important;
   }
 
-  .example-button-row {
+  .social-button-row {
     display: table-cell;
     width: 100%;
   }
 
-  .example-button-row .mat-button-base {
+  .social-button-row .mat-button-base {
     margin: 8px 8px 8px 0;
   }
 
-  .example-flex-container {
+  .social-flex-container {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
   }
 
-  .example-button-container {
+  .social-button-container {
     display: flex;
     justify-content: center;
     width: 60px;

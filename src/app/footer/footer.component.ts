@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomIconService } from '../services/custom-icon.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,8 +7,7 @@ import { CustomIconService } from '../services/custom-icon.service';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private customIconService: CustomIconService) {
-    this.customIconService.init();
+  constructor() {
   }
 
   ngOnInit() {

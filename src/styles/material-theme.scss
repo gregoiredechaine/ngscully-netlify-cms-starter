@@ -191,6 +191,18 @@ $mat-accent: (
   )
 );
 $theme-accent: mat-palette($mat-accent, main, lighter, darker);
+$dark-mat-accent: (
+  main: #ffffff,
+  lighter: #ffffff,
+  darker: #ffffff,
+  200: #ffffff, // For slide toggle,
+  contrast : (
+    main: $dark-primary-text,
+    lighter: $dark-primary-text,
+    darker: $dark-primary-text,
+  )
+);
+$dark-theme-accent: mat-palette($dark-mat-accent, main, lighter, darker);
 
 body {
   --warn-color: #d11123;
@@ -215,7 +227,7 @@ $mat-warn: (
 $theme-warn: mat-palette($mat-warn, main, lighter, darker);
 
 $theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
-$dark-theme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
+$dark-theme: mat-dark-theme($theme-primary, $dark-theme-accent, $theme-warn);
 
 // Theme Init
 @include angular-material-theme($theme);
@@ -243,7 +255,6 @@ $dark-theme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
 }
 
 .material-icons {
-  font-size: 30px;
   font-family: 'Material Icons', 'Material Icons';
   .mat-badge-content {
     font-family: 'Arial';

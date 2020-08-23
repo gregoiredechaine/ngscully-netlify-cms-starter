@@ -1,0 +1,15 @@
+// Styling for logo
+@import '~@angular/material/theming';
+
+@mixin logo-theme($theme) {
+  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+
+    .logo-container {
+      color: mat-color($accent);
+      font-size: 1em;
+      font-weight: 700;
+      text-decoration: none;
+      }
+
+}
