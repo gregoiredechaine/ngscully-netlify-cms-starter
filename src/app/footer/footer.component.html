@@ -8,7 +8,7 @@
   <div fxFlex="0 1 50%" fxFlex.lt-sm="100%">
     <div fxLayout="column" fxLayoutGap="30px" class="footer-column">
       <h1>We are located at:</h1>
-      <h1>68 Scottfield Drive<br/>Scarboroug, Ontario, Canada<br/>M1S 5A9</h1>
+      <h1>68 Scottfield Drive<br/>Scarborough, Ontario<br/>Canada M1S 5A9</h1>
       <a mat-flat-button color="primary" href="mailto:info@scottfieldautocentre.com?subject=Scottfield Auto Centre Inquiry">info@scottfieldautocentre.com</a>
       <h1>Follow us on social:</h1>
       <div class="social-button-row">
@@ -27,28 +27,22 @@
           </div>
         </div>
       </div>
+      <div class="sitemap-button-row">
+        <h1>Sitemap:</h1><br>
+        <button mat-flat-button color="primary" routerLink="/contact">Contact</button>
+        <button mat-flat-button color="primary" routerLink="/directory">Directory</button>
+        <button mat-flat-button color="primary" routerLink="/about">About</button>
+        <button mat-flat-button color="primary" routerLink="/blog">Blog</button>
+        <button mat-flat-button color="primary" routerLink="/contact" [fragment]='"social"'>Social</button>
+        <button mat-flat-button color="primary">
+        <mat-slide-toggle [checked]="isDarkTheme | async" labelPosition="before" (change)="toggleDarkTheme($event.checked)" color="accent">
+          {{ themeButtonName }} Mode
+        </mat-slide-toggle>
+        </button>
+      </div>
     </div>
   </div>
-  <div fxFlex="0 1 50%" fxFlex.lt-sm="100%">
-    <h1>Sitemap:</h1>
-    <mat-nav-list>
-      <mat-list-item>
-        <button mat-flat-button color="accent" routerLink="/contact">Contact</button>
-      </mat-list-item>
-      <mat-list-item>
-        <button mat-flat-button color="accent" routerLink="/directory">Directory</button>
-      </mat-list-item>
-      <mat-list-item>
-        <button mat-flat-button color="accent" routerLink="/about">About</button>
-      </mat-list-item>
-      <mat-list-item>
-        <button mat-flat-button color="accent" routerLink="/blog">Blog</button>
-      </mat-list-item>
-      <mat-list-item>
-        <button mat-flat-button color="accent" routerLink="/contact" [fragment]='"social"'>Social</button>
-      </mat-list-item>
-    </mat-nav-list>
-  </div>
+
   <div fxFlex="0 1 100%" class="footer-copyright">
     <p class="copyright">Scottfield Auto Centre 2020 © All Rights Reserved</p>
   </div>

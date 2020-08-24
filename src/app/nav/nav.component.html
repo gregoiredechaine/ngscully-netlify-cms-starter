@@ -2,23 +2,20 @@
   <app-logo></app-logo>
   <span class="crai-nav-spacer"></span>
   <div fxHide.lt-md class="crai-nav-button-row">
-    <a mat-button routerLink="/contact">Contact</a>
-    <a mat-button routerLink="/directory">Directory</a>
-    <a mat-button routerLink="/about">About</a>
-    <a mat-button routerLink="/blog">Blog</a>
+    <a mat-flat-button routerLink="/contact">Contact</a>
+    <a mat-flat-button routerLink="/directory">Directory</a>
+    <a mat-flat-button routerLink="/about">About</a>
+    <a mat-flat-button routerLink="/blog">Blog</a>
+    <button mat-flat-button>
+    <mat-slide-toggle [checked]="isDarkTheme | async" labelPosition="before" (change)="toggleDarkTheme($event.checked)" color="primary">
+      {{ themeButtonName }} Mode
+    </mat-slide-toggle>
+    </button>
   </div>
 
   <button mat-icon-button class="example-icon" aria-label="Menu" (click)="drawer.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <button mat-icon-button [matMenuTriggerFor]="settingsMenu"><mat-icon>settings</mat-icon></button>
-  <mat-menu #settingsMenu="matMenu" yPosition="below" color="accent">
-    <button mat-menu-item>
-    <mat-slide-toggle [checked]="isDarkTheme | async" labelPosition="before" (change)="toggleDarkTheme($event.checked)" color="primary">
-      <mat-icon>nights_stay</mat-icon>Dark Mode
-    </mat-slide-toggle>
-    </button>
-  </mat-menu>
 </mat-toolbar>
 
 <mat-sidenav #drawer class="example-sidenav" mode="side">
@@ -35,14 +32,9 @@
     <button (click)="drawer.toggle()" mat-button>
       <mat-icon>close</mat-icon><span>Close</span>
     </button>
-    <button mat-button [matMenuTriggerFor]="settingsMenu">
-      <mat-icon>settings</mat-icon><span>Site Settings</span>
+    <button mat-flat-button>
+    <mat-slide-toggle [checked]="isDarkTheme | async" labelPosition="before" (change)="toggleDarkTheme($event.checked)" color="primary">
+      {{ themeButtonName }} Mode
+    </mat-slide-toggle>
     </button>
-    <mat-menu #settingsMenu="matMenu" yPosition="below">
-      <button mat-menu-item>
-      <mat-slide-toggle [checked]="isDarkTheme | async" labelPosition="before" (change)="toggleDarkTheme($event.checked)" color="primary">
-        <mat-icon>nights_stay</mat-icon>Dark Mode
-      </mat-slide-toggle>
-      </button>
-    </mat-menu>
 </mat-sidenav>

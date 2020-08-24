@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 export class NavComponent implements OnInit {
   showFiller = false;
   isDarkTheme: Observable<boolean>;
+  themeButtonName = 'Light';
 
   constructor( private themeService: ThemeService ) {
   }
@@ -20,5 +21,19 @@ export class NavComponent implements OnInit {
 
   toggleDarkTheme(checked: boolean) {
     this.themeService.setDarkTheme(checked);
+    switch(this.themeButtonName) {
+      case 'Light': {
+        this.themeButtonName = 'Dark';
+        break;
+      }
+      case 'Dark': {
+        this.themeButtonName = 'Light';
+        break;
+      }
+      default: {
+        this.themeButtonName = 'Light';
+        break;
+      }
+    }
   }
 }
