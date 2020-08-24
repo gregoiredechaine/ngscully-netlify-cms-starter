@@ -5,7 +5,7 @@
   $accent: map-get($theme, accent);
   $primary: map-get($theme, primary);
   $bg: map-get(map-get($theme, background), background);
-  $bg2: map-get(map-get($theme, background), app-bar);
+  $bg2: map-get(map-get($theme, background), disabled-button-toggle);
   $break-small: 599px;
   $break-tablet: 959px;
 

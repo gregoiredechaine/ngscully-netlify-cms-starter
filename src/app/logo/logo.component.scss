@@ -4,12 +4,19 @@
 @mixin logo-theme($theme) {
   $accent: map-get($theme, accent);
   $primary: map-get($theme, primary);
+  $bg: map-get(map-get($theme, background), background);
 
     .logo-container {
       color: mat-color($accent);
-      font-size: 1em;
-      font-weight: 700;
-      text-decoration: none;
+      position: relative;
+      top: 60px;
+      }
+
+      .logo {
+        text-align: left !important;
+        font-weight: 700;
+        font-size: 2em;
+        line-height: 2em;
       }
 
 }

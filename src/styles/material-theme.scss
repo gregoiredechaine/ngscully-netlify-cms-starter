@@ -100,7 +100,7 @@ $dark-bg-alpha-12:    rgba(#000000, 0.12);
 $mat-light-theme-background: (
   background:               $light-background,
   status-bar:               $light-bg-darker-20,
-  app-bar:                  $light-bg-darker-5,
+  app-bar:                  $light-background,
   hover:                    $dark-bg-alpha-4,
   card:                     $light-bg-lighter-5,
   dialog:                   $light-bg-lighter-5,
