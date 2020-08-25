@@ -1,9 +1,13 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
 .crai-nav-spacer {
   flex: 1 1 auto;
 }
 
 .nav-padding{
-  padding: 60px;
+  padding: 40px 30px;
 }
 
 .crai-nav-button-row {
@@ -31,4 +35,10 @@
   height: 80px;
   font-size: 4em;
   font-weight: 700;
+}
+
+.menu-button {
+  position: fixed;
+  top: 30px;
+  right: 30px;
 }

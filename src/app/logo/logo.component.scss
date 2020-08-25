@@ -8,15 +8,14 @@
 
     .logo-container {
       color: mat-color($accent);
-      position: relative;
-      top: 60px;
+      padding-right: 30px;
       }
 
       .logo {
-        text-align: left !important;
+        color: $bg;
         font-weight: 700;
-        font-size: 2em;
-        line-height: 2em;
+        font-size: 1.5em;
+        text-decoration: none;
       }
 
 }
