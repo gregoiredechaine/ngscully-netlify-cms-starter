@@ -9,12 +9,12 @@
   $break-tablet: 959px;
 
   .directory {
-    padding: 60px;
+    padding: 30px;
   }
 
   .directory-board {
     background-color: mat-color($accent);
-    padding: 60px;
+    padding: 60px 30px;
 
     .directory-board-title {
       color: $bg;
@@ -57,15 +57,6 @@
   }
 
   @media screen and (max-width: $break-tablet) {
-    .directory {
-      padding: 60px 30px;
-    }
-    .directory-board {
-      padding: 60px 30px;
-    }
-    .big-tile {
-      padding: 60px 30px;
-    }
     .masonry-item {
       width: calc(50% - 0.5 * 30px);
     }

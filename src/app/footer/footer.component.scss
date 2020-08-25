@@ -9,7 +9,7 @@
   $break-tablet: 959px;
 
   .footer-container {
-    padding: 60px;
+    padding: 60px 30px;
     background-color: mat-color($accent);
     color: $bg !important;
   }
@@ -38,12 +38,8 @@
   .cls-1{fill: $bg}
 
   @media screen and (max-width: $break-tablet) {
-    .footer-container {
-      padding: 60px 30px;
-    }
   }
 
   @media screen and (max-width: $break-small) {
-
   }
 }

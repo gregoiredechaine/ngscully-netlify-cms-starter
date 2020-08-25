@@ -10,7 +10,7 @@
   $break-tablet: 959px;
 
   .map-tile {
-    padding: 60px;
+    padding: 60px 30px;
   }
 
   .example-button-row {
@@ -35,11 +35,5 @@
   }
 
   @media screen and (max-width: $break-tablet) {
-    .map-tile {
-      padding: 60px 0;
-    }
-    .map-tile-title {
-      padding: 0 30px;
-    }
   }
 }

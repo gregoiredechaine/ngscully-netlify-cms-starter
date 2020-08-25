@@ -2,13 +2,13 @@
 
 <ng-container *ngIf="directoryList$">
   <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign="center center">
-    <div class="big-tile" fxFlex="0 1 50%" fxFlex.lt-sm="100%">
+    <div class="big-tile" fxFlex="0 1 40%" fxFlex.lt-sm="100%">
       <h1 class="mat-display-2">Directory</h1>
       <h1 class="mat-headline">
         Browse the directory to find more information about our tenants, contact information included.
       </h1>
     </div>
-    <div class="big-tile" fxFlex="0 1 50%" fxFlex.lt-md="100%">
+    <div class="big-tile" fxFlex="0 1 60%" fxFlex.lt-md="100%">
       <img class="image-tile" src="./assets/images/render_005.jpeg">
     </div>
   </div>
@@ -27,10 +27,8 @@
     <ngx-masonry [options]="{ gutter: 30, itemSelector: '.masonry-item', columnWidth: '.masonry-item', horizontalOrder: true }">
       <div ngxMasonryItem class="masonry-item" *ngFor="let directory of directoryList$ | async">
         <mat-card [routerLink]="[directory.route]" id="{{ directory.title.replace(' ', '_') }}">
-          <mat-card-header>
-            <mat-card-title>{{ directory.title }}</mat-card-title>
-            <mat-card-title class="unit-number">Unit {{ directory.unitNumber }}</mat-card-title>
-          </mat-card-header>
+            <h1>{{ directory.title }}</h1>
+            <h1 class="unit-number">Unit {{ directory.unitNumber }}</h1>
           <img mat-card-image [src]="directory.directoryImage" alt="Photo of a Shiba Inu">
           <mat-card-content>
             <p>{{ directory.description }}</p>
