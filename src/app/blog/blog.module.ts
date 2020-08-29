@@ -4,10 +4,22 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
 import { BlogRoutingModule } from './blog-routing.module';
 import { BlogComponent } from './blog.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
-import { MaterialModule } from '../shared/material.module';
+import { AngularMaterialModule } from '../angular-material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 @NgModule({
-  declarations: [BlogComponent, BlogListComponent],
-  imports: [CommonModule, BlogRoutingModule, ScullyLibModule, MaterialModule],
+  declarations: [
+    BlogComponent,
+    BlogListComponent
+  ],
+  imports: [
+    CommonModule,
+    BlogRoutingModule,
+    ScullyLibModule,
+    AngularMaterialModule,
+    FlexLayoutModule,
+    NgxMasonryModule
+  ],
 })
 export class BlogModule {}

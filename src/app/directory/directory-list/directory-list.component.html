@@ -19,7 +19,6 @@
       <button mat-flat-button class="sidenav-jumbo-button" *ngFor="let directory of directoryList$ | async" routerLink="{{directory.route}}">{{ directory.title }}</button>
     </div>
   </div>
-</ng-container>
 
 <div fxLayout="column" class="directory">
   <div fxFlex="100%">
@@ -43,3 +42,4 @@
     </ngx-masonry>
   </div>
 </div>
+</ng-container>

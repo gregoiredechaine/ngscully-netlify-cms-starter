@@ -1,21 +1,32 @@
-<!-- <h1>Overview of blog posts</h1> -->
+<mat-progress-bar *ngIf="!blogs$" mode="buffer"></mat-progress-bar>
 
-<div class="blog">
-  <mat-card
-    class="article"
-    *ngFor="let blog of blogs$ | async"
-    [routerLink]="[blog.route]"
-  >
-    <mat-card-header>
-      <mat-card-title>{{ blog.title || blog.route }}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>
-        {{ blog.description }}
-      </p>
-    </mat-card-content>
-    <mat-card-actions align="center">
-      <button mat-button color="primary">Read More</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+<ng-container *ngIf="blogs$">
+
+  <div fxLayout="column" class="directory">
+    <div class="blog-title" fxFlex="100%">
+      <h1 class="mat-display-2">Blog</h1>
+      <h1 class="mat-headline">Keep up to date with everything Scottfield Auto Centre.</h1>
+    </div>
+    <div fxFlex="100%">
+      <ngx-masonry [options]="{ gutter: 30, itemSelector: '.masonry-item', columnWidth: '.masonry-item', horizontalOrder: true }">
+        <div ngxMasonryItem class="masonry-item" *ngFor="let blog of blogs$ | async">
+          <mat-card [routerLink]="[blog.route]" id="{{ blog.title.replace(' ', '_') }}">
+              <h1>{{ blog.title }}</h1>
+            <mat-card-content>
+              <p>{{ blog.description }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-flat-button color="accent" [routerLink]="blog.router"><mat-icon>read_more</mat-icon> Read More</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </ngx-masonry>
+    </div>
+  </div>
+
+  <div class="directory-board">
+    <h1 class="mat-display-2 directory-board-title">Advertising Opportunities:</h1>
+    <h1 class="mat-headline directory-board-title">Reach out to our team if you would like to share your story or advertise with us. You can download our Tenant Platform User Agreement or building assets here...</h1>
+  </div>
+
+</ng-container>

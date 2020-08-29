@@ -1,11 +1,70 @@
-.blog {
-  margin-top: 2rem;
-  display: grid;
-  /* make grid responsive */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-column-gap: 3rem;
-  grid-row-gap: 20px;
-}
-.blog .article {
-  width: 100%;
+// Styling for Directory List
+@import '~@angular/material/theming';
+
+@mixin blog-list-theme($theme) {
+  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+  $bg: map-get(map-get($theme, background), background);
+  $break-small: 599px;
+  $break-tablet: 959px;
+
+  .directory {
+    padding: 30px;
+    max-width: 2000px;
+  }
+
+  .directory-board {
+    background-color: mat-color($accent);
+
+    .directory-board-title {
+      color: $bg;
+    }
+  }
+
+  .masonry-item {
+    width: calc(33.33% - 0.667 * 30px);
+    margin-bottom: 30px;
+  }
+
+  .image-tile {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
+  .blog-title {
+    padding-bottom: 30px;
+  }
+
+  .button-row {
+    display: table-cell;
+    margin-bottom: 60px;
+
+    .mat-button-base {
+      margin: 0 15px 15px 0;
+    }
+  }
+
+  .sidenav-jumbo-button {
+    height: 50px;
+    font-size: 1.25em;
+    font-weight: 700;
+  }
+
+  .unit-number {
+    color: mat-color($primary);
+  }
+
+  @media screen and (max-width: $break-tablet) {
+    .masonry-item {
+      width: calc(50% - 0.5 * 30px);
+    }
+  }
+
+  @media screen and (max-width: $break-small) {
+    .masonry-item {
+      width: 100%;
+    }
+  }
 }

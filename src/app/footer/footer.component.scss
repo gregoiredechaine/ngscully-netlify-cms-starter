@@ -19,9 +19,12 @@
     width: 100%;
   }
 
-  .social-button-row .mat-button-base {
-    margin: 8px 8px 8px 0;
+.sitemap-button-row {
+  display: table-cell;
+  .mat-button-base {
+    margin: 0 15px 15px 0;
   }
+}
 
   .social-flex-container {
     display: flex;
